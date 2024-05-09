@@ -1,0 +1,83 @@
+
+body {
+  font-family: Arial, sans-serif; 
+  background-image: url('https://static.vecteezy.com/system/resources/previews/006/263/900/non_2x/white-and-blue-tone-abstract-background-backdrop-for-presentation-design-for-website-concept-of-beauty-and-health-business-brochure-free-photo.jpg'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  background-color: #f8f9fa; 
+}
+
+
+h1 {
+  color: #007bff;
+  text-align: center; 
+  margin-top: 3rem; 
+}
+
+
+.container-fluid {
+  padding: 0 15px; 
+}
+
+
+
+.row {
+  margin-left: -15px; 
+  margin-right: -15px; 
+}
+
+@media (max-width: 767.98px) {
+  .card {
+    width: 100%; 
+  }
+}
+/* Estilo para las tablas */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Estilo para el encabezado */
+.table th, .table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Estilo para las filas impares */
+.table tbody tr:nth-child(odd) {
+  background-color: #f8f9fa;
+}
+
+/* Estilo al pasar el cursor sobre las filas */
+.table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+/* Estilo para la primera fila del cuerpo */
+.table tbody tr:first-child {
+  font-weight: bold;
+}
+
+/* Estilo para las celdas de la primera columna */
+.table tbody td:first-child {
+  border-left: 3px solid #007bff; /* Color azul para el borde izquierdo */
+  font-weight: bold;
+}
+
+/* Estilo para las celdas de la última columna */
+.table tbody td:last-child {
+  border-right: 3px solid #007bff; /* Color azul para el borde derecho */
+  font-weight: bold;
+}
+#chartTooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
