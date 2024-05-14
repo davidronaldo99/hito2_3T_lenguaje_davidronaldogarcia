@@ -180,3 +180,109 @@ const preguntasHumanes = document.getElementById('preguntasHumanes');
 const preguntasGetafe = document.getElementById('preguntasGetafe');
 crearPreguntasRespuestas(preguntasHumanes, preguntas, respuestasHumanes);
 crearPreguntasRespuestas(preguntasGetafe, preguntas, respuestasGetafe);
+
+
+// Configurar gráfico circular para Frecuencia de revisión de redes sociales
+const configFrecuenciaRevision = {
+  type: 'doughnut',
+  data: {
+    labels: ['Promedio en Humanes', 'Promedio en Getafe'],
+    datasets: [{
+      label: 'Frecuencia de revisión de redes sociales',
+      data: [4.08, 3.63],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+      ],
+      borderWidth: 1,
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Frecuencia de revisión de redes sociales',
+      }
+    }
+  }
+};
+// Esperar a que el DOM esté completamente cargado
+document.addEventListener("DOMContentLoaded", function() {
+  // Crear el título
+  const chartTitle = document.createElement('h2');
+  chartTitle.textContent = 'Frecuencia de Interacción en Redes Sociales';
+  chartTitle.classList.add('chart-title');
+
+  // Obtener el contenedor del gráfico circular
+  const chartContainer = document.getElementById('chartContainer');
+
+  // Agregar el título al contenedor
+  chartContainer.appendChild(chartTitle);
+});
+
+// Obtener el contexto del lienzo para el gráfico circular
+const ctxFrecuenciaRevision = document.getElementById('chartFrecuenciaRevision').getContext('2d');
+
+// Crear el gráfico circular
+const myChartFrecuenciaRevision = new Chart(ctxFrecuenciaRevision, configFrecuenciaRevision);
+
+
+// Datos
+const datos = {
+  labels: ['Revisión', 'Compartir', 'Publicaciones', 'Dependencia', 'Ansiedad'],
+  datasets: [{
+    label: 'Promedio en Humanes',
+    data: [4.08, 4.33, 3.83, 3.17, 2.92],
+    borderColor: 'rgba(255, 99, 132, 1)',
+    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+    borderWidth: 2,
+    pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+    pointRadius: 5,
+    pointHoverRadius: 8
+  }, {
+    label: 'Promedio en Getafe',
+    data: [3.63, 3.63, 3.42, 3.42, 3.13],
+    borderColor: 'rgba(54, 162, 235, 1)',
+    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+    borderWidth: 2,
+    pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+    pointRadius: 5,
+    pointHoverRadius: 8
+  }]
+};
+
+// Opciones
+const options = {
+  scales: {
+    y: {
+      beginAtZero: true
+    }
+  },
+  plugins: {
+    title: {
+      display: true,
+      text: 'Promedio de Interacciones en Redes Sociales',
+      font: {
+        size: 24
+      }
+    }
+  }
+};
+
+// Obtener el contexto del lienzo
+const ctx = document.getElementById('lineChart').getContext('2d');
+
+// Crear el gráfico de líneas
+const lineChart = new Chart(ctx, {
+  type: 'line',
+  data: datos,
+  options: options
+});
